@@ -1,10 +1,10 @@
 <script>
-  import logo from './assets/svelte.png'
   import router from 'page';
 
   import Home from "./pages/Home.svelte";
   import About from "./pages/About.svelte";
   import Header from "./components/Header.svelte";
+  import AuthForm from "./components/AuthForm.svelte";
 
   let page;
   let params;
@@ -18,20 +18,23 @@
     page = About;
     currentRoute = ctx.pathname;
   });
+  router('/login', (ctx) => {
+    page = AuthForm
+    currentRoute = ctx.pathname;
+  });
 
   router.start();
 </script>
 
 <main>
-  <img src={logo} alt="Svelte Logo" />
-  <Header active={currentRoute} />
-  <svelte:component this={page} {params} />
+  <Header active={currentRoute}/>
+  <svelte:component this={page} {params}/>
 </main>
 
 <style>
   :root {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   main {

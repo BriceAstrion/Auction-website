@@ -112,7 +112,7 @@
         width: 180px;
         height: 50%;
         margin-top: 50px;
-        margin-left: -24px;
+        margin-left: -44px;
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: 2px;

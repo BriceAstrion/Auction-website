@@ -33,11 +33,11 @@
     .search-bar {
         text-align: center;
         padding: 10px;
-        margin-top: -390px;
+        margin-top: -410px;
     }
 
     input {
-        width: 650px;
+        width: 950px;
         padding: 5px;
         font-size: 16px;
         margin-left: 145px;

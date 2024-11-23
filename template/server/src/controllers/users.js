@@ -108,8 +108,13 @@ class UserController {
             return res.status(404).json({ error: 'User not found.' });
         }
 
-        if (role !== undefined) user.isAdmin = role === 'admin' ? true : false;
-        if (name) user.name = name;
+        // Ensure role is updated correctly
+        if (role !== undefined) {
+            user.isAdmin = role.toLowerCase() === 'admin'; // Map "admin" to true, others to false
+        }
+        if (name) {
+            user.name = name;
+        }
 
         try {
             return res.status(200).json(user);

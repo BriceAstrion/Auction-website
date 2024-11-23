@@ -6,7 +6,7 @@ import {isLoggedIn} from "../middlewares/isLoggedIn.js";
 const router = express.Router();
 const userController = new UserController();
 
-router.get('/', isLoggedIn, isAdmin, userController.getAllUsers);
+router.get('/', userController.getAllUsers);
 router.get('/id/:id', isLoggedIn, isAdmin, userController.getUserById);
 router.get('/:email', (req, res) => userController.getOneUser(req, res));
 

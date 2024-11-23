@@ -7,7 +7,7 @@ const router = express.Router();
 const userController = new UserController();
 
 router.get('/', userController.getAllUsers);
-router.get('/id/:id', isLoggedIn, isAdmin, userController.getUserById);
+router.get('/:id', userController.getUserById);
 router.get('/:email', (req, res) => userController.getOneUser(req, res));
 
 router.post('/', (req, res) => userController.registerUser(req, res));
